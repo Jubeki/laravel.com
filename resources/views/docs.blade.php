@@ -33,29 +33,13 @@
                         </nav>
 
                         @php
-                            $promote = null;
-
-                            switch(random_int(1, 5)) {
-                                case 1:
-                                    $promote = 'forge';
-                                    break;
-
-                                case 2:
-                                    $promote = 'vapor';
-                                    break;
-
-                                case 3:
-                                    $promote = 'nova';
-                                    break;
-
-                                case 4:
-                                    $promote = 'pulse';
-                                    break;
-
-                                case 5:
-                                    $promote = 'reverb';
-                                    break;
-                            }
+                            $promote = Illuminate\Support\Arr::random([
+                                'forge',
+                                'vapor',
+                                'nova',
+                                'pulse',
+                                'reverb',
+                            ]);
                         @endphp
 
                         @if ($promote == 'forge')
